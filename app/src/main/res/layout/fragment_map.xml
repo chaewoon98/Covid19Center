@@ -36,7 +36,6 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"></FrameLayout>
 
-
     <Button
         android:id="@+id/map_button"
         android:layout_width="match_parent"
@@ -46,6 +45,5 @@
         android:text="자세히 보기 / 예약하기"
         android:textColor="@color/colorWhite"
         android:textSize="16sp" />
-
 </LinearLayout>
 

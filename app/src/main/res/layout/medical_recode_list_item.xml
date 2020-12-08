@@ -13,16 +13,17 @@
         android:orientation="vertical"
         android:layout_marginLeft="10dp">
 
+
         <TextView
             android:id="@+id/medical_recode_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+
             android:layout_marginTop="26dp"
             android:fontFamily="@font/nanumsquare_b"
             android:text="예약자 : 박태순"
             android:textColor="@color/colorBlack"
             android:textSize="17dp" />
-
 
         <TextView
             android:id="@+id/medical_recode_name_clinicName"
@@ -38,11 +39,13 @@
             android:id="@+id/medical_recode_name_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+
             android:layout_marginTop="13dp"
             android:layout_marginRight="20dp"
             android:text="진료 일시 : 2020/11/28"
             android:textColor="@color/colorBlack"
             android:textSize="17dp" />
+
 
     </LinearLayout>
 

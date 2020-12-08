@@ -13,8 +13,10 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import org.androidtown.covid19center.Main.MainActivity;
+import org.androidtown.covid19center.Main.OnBackPressedListener;
 import org.androidtown.covid19center.R;
 
 import org.androidtown.covid19center.Hospital.HospitalMainActivity;
@@ -41,13 +43,21 @@ public class LoginActivity extends AppCompatActivity {
     private Context mcontext;
     private ArrayList<ReservationVO> reservationVOArrayList;
     private ArrayList<QuestionnaireVO> questionnaireVOArrayList;
-
     private String id, password;
+    BackPressCloseHandler backpress;
+
+
+    @Override
+    public void onBackPressed() {
+        backpress.onBackPressed();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        backpress = new BackPressCloseHandler(this);
+
 
         // 네트워크가 켜져있으면 동작
         if (checkNetworkSetting() == 1) {
@@ -128,9 +138,7 @@ public class LoginActivity extends AppCompatActivity {
                     for (int i = 0; i < data.size(); i++) {
                         if (data.get(i).getId().equals(id) && data.get(i).getPassword().equals(password)) {
                             Log.d("~~~~~LoginActivity", "로그인 가능");
-                            Toast toast = Toast.makeText(LoginActivity.this, "로그인 성공", Toast.LENGTH_SHORT);
-                            toast.show();
-
+                           
                             AppManager.getInstance().setUserId(id);   // user id 저장하기
 
                             isLoginPossible = true;
